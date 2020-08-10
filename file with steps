@@ -1,7 +1,23 @@
-Let's create a file
+import smtplib
 
-Step 1
-step 2
-step 3
+# Specifying the from and to addresses
 
-Trying to add step 4 and step 5 as optional
+fromaddr = 'tubatilikhitha@gmail.com'
+toaddrs  = 'tubatilikhitha@gmail.com'
+
+# Writing the message (this message will appear in the email)
+
+msg = 'Message from python script'
+
+# Gmail Login
+
+username = 'tubatilikhitha@gmail.com'
+password = 'ltubati@1'
+
+# Sending the mail  
+
+server = smtplib.SMTP('smtp.gmail.com:587')
+server.starttls()
+server.login(username,password)
+server.sendmail(fromaddr, toaddrs, msg)
+server.quit()
